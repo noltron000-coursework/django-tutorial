@@ -8,3 +8,6 @@ Dev Server:
 	- Start with: `from polls.models import Choice, Question`
 	- `Question.objects.all()`
 	- `Question.objects.filter(id=1)`
+
+Tutorial Source:
+- https://docs.djangoproject.com/en/2.2/intro
