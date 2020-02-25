@@ -12,8 +12,8 @@ class Question(models.Model):
 		Checks the elapsed time since the item was published.
 		If it is below one, it returns true.
 		'''
-		elapsed = timezone.now() - datetime.timedelta(days=1)
-		return self.pub_date >= elapsed
+		now = timezone.now()
+		return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 	# create fields
 	question_text = models.CharField(max_length=200)
