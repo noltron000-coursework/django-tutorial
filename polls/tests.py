@@ -36,7 +36,7 @@ class QuestionIndexViewTests(TestCase):
 		response = self.client.get(reverse('polls:index'))
 		self.assertQuerysetEqual(
 			response.context['latest_question_list'],
-			['<Question: Past question.>']
+			['Past question.']
 		)
 
 	def test_future_question(self):
@@ -59,7 +59,8 @@ class QuestionIndexViewTests(TestCase):
 		response = self.client.get(reverse('polls:index'))
 		self.assertQuerysetEqual(
 			response.context['latest_question_list'],
-			['<Question: Past question.>']
+			['Past question.'],
+			ordered=False
 		)
 
 	def test_two_past_questions(self):
@@ -71,7 +72,7 @@ class QuestionIndexViewTests(TestCase):
 		response = self.client.get(reverse('polls:index'))
 		self.assertQuerysetEqual(
 			response.context['latest_question_list'],
-			['<Question: Past question 2.>', '<Question: Past question 1.>']
+			['Past question 2.', 'Past question 1.']
 		)
 
 
