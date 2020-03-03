@@ -1,0 +1,8 @@
+body {
+	background: white url('./images/background.gif') repeat;
+}
+
+li a {
+	font-size: 4rem;
+	color: purple;
+}
